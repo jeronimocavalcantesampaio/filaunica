@@ -1,0 +1,351 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Ago 06, 2023 as 21:37 PM
+-- Versão do Servidor: 5.0.87
+-- Versão do PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `omelhor_sim`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adminsettings`
+--
+
+CREATE TABLE IF NOT EXISTS `adminsettings` (
+  `sitename` text,
+  `siteurl` text,
+  `Email` text,
+  `Password` varchar(75) default NULL,
+  `Alertpay` varchar(75) default NULL,
+  `Inpays` varchar(75) default NULL,
+  `Sfipay` varchar(75) default NULL,
+  `profee` float(8,2) default NULL,
+  `levels` int(10) unsigned NOT NULL,
+  `level1` float(8,2) default NULL,
+  `level2` float(8,2) default NULL,
+  `level3` float(8,2) default NULL,
+  `level4` float(8,2) default NULL,
+  `level5` float(8,2) default NULL,
+  `level6` float(8,2) default NULL,
+  `level7` float(8,2) default NULL,
+  `level8` float(8,2) default NULL,
+  `level9` float(8,2) default NULL,
+  `level10` float(8,2) default NULL,
+  `forcedmatrix` int(10) unsigned NOT NULL,
+  `duration` float(8,2) default NULL,
+  `signupbonus` float(8,2) default NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `adminsettings`
+--
+
+INSERT INTO `adminsettings` (`sitename`, `siteurl`, `Email`, `Password`, `Alertpay`, `Inpays`, `Sfipay`, `profee`, `levels`, `level1`, `level2`, `level3`, `level4`, `level5`, `level6`, `level7`, `level8`, `level9`, `level10`, `forcedmatrix`, `duration`, `signupbonus`) VALUES
+('SCRIPT FILA-ÚNICA', 'http://www.demofilaunica.5br.biz', 'email@demofilaunica.5br.biz', '123456', 'pagseguro@demofilaunica.5br.biz', 'admin@yoursitename.com', 'admin@yoursitename.com', 15.00, 10, 2.00, 3.00, 3.00, 2.00, 1.00, 1.00, 1.00, 1.00, 1.00, 3.00, 4, 50.00, 1.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `arquivos`
+--
+
+CREATE TABLE IF NOT EXISTS `arquivos` (
+  `id` int(5) NOT NULL auto_increment,
+  `titulo` text NOT NULL,
+  `descricao` text NOT NULL,
+  `link` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Extraindo dados da tabela `arquivos`
+--
+
+INSERT INTO `arquivos` (`id`, `titulo`, `descricao`, `link`) VALUES
+(6, 'Nome do Arquivo Teste', 'Descrição do arquivo teste', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ativo`
+--
+
+CREATE TABLE IF NOT EXISTS `ativo` (
+  `posicao` int(10) NOT NULL auto_increment,
+  `id` text NOT NULL,
+  `nome` text NOT NULL,
+  `sexo` varchar(120) NOT NULL,
+  `estado` text NOT NULL,
+  `emailpagseguro` text NOT NULL,
+  `email` text NOT NULL,
+  `titulolink` text NOT NULL,
+  `linkdolink` text NOT NULL,
+  `linkdosite` text NOT NULL,
+  `linkdaimagem` text NOT NULL,
+  `linksitepequeno` text NOT NULL,
+  `linkimagempequena` text NOT NULL,
+  `senha` text NOT NULL,
+  `indicadopor` text NOT NULL,
+  `saldo` float(8,2) default NULL,
+  `indicadodireto` text NOT NULL,
+  `cliquelink` text NOT NULL,
+  `cliquebannerp` text NOT NULL,
+  `cliquebanner` text NOT NULL,
+  `vis_link` text NOT NULL,
+  `vis_bannerp` text NOT NULL,
+  `vis_banner` text NOT NULL,
+  `cidade` text NOT NULL,
+  `datacadastro` text NOT NULL,
+  PRIMARY KEY  (`posicao`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `ativo`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `banners`
+--
+
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` int(5) NOT NULL auto_increment,
+  `link` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Extraindo dados da tabela `banners`
+--
+
+INSERT INTO `banners` (`id`, `link`) VALUES
+(14, 'http://www.marketing-brasil.com/imagens/banner1.gif');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `como_funciona`
+--
+
+CREATE TABLE IF NOT EXISTS `como_funciona` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `como_funciona`
+--
+
+INSERT INTO `como_funciona` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `faq`
+--
+
+CREATE TABLE IF NOT EXISTS `faq` (
+  `id` int(5) NOT NULL auto_increment,
+  `titulo` text NOT NULL,
+  `resposta` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Extraindo dados da tabela `faq`
+--
+
+INSERT INTO `faq` (`id`, `titulo`, `resposta`) VALUES
+(26, 'Pergunta?', 'Resposta');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ganhadores`
+--
+
+CREATE TABLE IF NOT EXISTS `ganhadores` (
+  `id` int(5) NOT NULL auto_increment,
+  `nome` text NOT NULL,
+  `cidade` varchar(120) NOT NULL,
+  `estado` text NOT NULL,
+  `email` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `ganhadores`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `home`
+--
+
+CREATE TABLE IF NOT EXISTS `home` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `home`
+--
+
+INSERT INTO `home` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `links`
+--
+
+CREATE TABLE IF NOT EXISTS `links` (
+  `id` int(5) NOT NULL auto_increment,
+  `titulo` text NOT NULL,
+  `link` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Extraindo dados da tabela `links`
+--
+
+INSERT INTO `links` (`id`, `titulo`, `link`) VALUES
+(8, 'Invista R$ 9 e Receba R$ 99', 'http://www.hiper9.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pagamento`
+--
+
+CREATE TABLE IF NOT EXISTS `pagamento` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `pagamento`
+--
+
+INSERT INTO `pagamento` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pendente`
+--
+
+CREATE TABLE IF NOT EXISTS `pendente` (
+  `id` int(5) NOT NULL auto_increment,
+  `nome` text NOT NULL,
+  `sexo` varchar(120) NOT NULL,
+  `estado` text NOT NULL,
+  `emailpagseguro` text NOT NULL,
+  `email` text NOT NULL,
+  `titulolink` text NOT NULL,
+  `linkdolink` text NOT NULL,
+  `linkdosite` text NOT NULL,
+  `linkdaimagem` text NOT NULL,
+  `linksitepequeno` text NOT NULL,
+  `linkimagempequena` text NOT NULL,
+  `senha` text NOT NULL,
+  `indicadopor` text NOT NULL,
+  `saldo` text NOT NULL,
+  `indicadodireto` text NOT NULL,
+  `cliquelink` text NOT NULL,
+  `cliquebannerp` text NOT NULL,
+  `cliquebanner` text NOT NULL,
+  `vis_link` text NOT NULL,
+  `vis_bannerp` text NOT NULL,
+  `vis_banner` text NOT NULL,
+  `cidade` text NOT NULL,
+  `datacadastro` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `pendente`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `termos`
+--
+
+CREATE TABLE IF NOT EXISTS `termos` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `termos`
+--
+
+INSERT INTO `termos` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vantagem`
+--
+
+CREATE TABLE IF NOT EXISTS `vantagem` (
+  `id` int(5) NOT NULL auto_increment,
+  `conteudo` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `vantagem`
+--
+
+INSERT INTO `vantagem` (`id`, `conteudo`) VALUES
+(1, 'Conteudo HTML');
